@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Minecraft Server Status Options</title>
+		<style>
+			body {
+				min-width: 300px;
+				overflow-x: hidden;
+				font-family: 'Open Sans',arial,sans-serif;
+			}
+			h1 {
+				margin: 0 0 20px 0;
+				text-align: center;
+			}
+			.port {
+				width: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Options</h1>
+        
+        <p>Make one field empty in order to remove the server. The first server will be displayed on the icon.</p>
+        
+        Refresh Interval: <font size="2">(in seconds</font>)<br />
+        <input type="text" id="refresh" /><br />
+        <br />
+        Servers: <br />
+        <div id="options"></div>
+		<br />
+        <button id="save">Save</button>
+        <button id="add">Add Server</button>
+		<div id="saved"></div>
+	</body>
+	<script src="options.js"></script>
+</html>
+
