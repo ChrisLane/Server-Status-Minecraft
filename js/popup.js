@@ -45,8 +45,7 @@ function retrieveInfo (id, ip) {
 						$('#ps' + id).append('<p><img src="http://cravatar.eu/avatar/' + pdata.players[i] + '/24.png" alt="' + pdata.players[i] + '"> ' + pdata.players[i] + '</p>');
 					}
 				} else if (pdata.error != null) {
-					//$('#ps' + id).html('<p>Failed to load players</p>');
-					$('#ps' + id).html('<p><img src="http://cravatar.eu/avatar/Aronnn/24.png" alt="Aronnn"> Aronnn</p>');
+					$('#ps' + id).html('<p>Failed to load players</p>');
 				}
 			});
 		} else {
