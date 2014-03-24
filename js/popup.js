@@ -34,23 +34,22 @@ function createPage () {
 }
 
 function retrieveInfo (id, ip) {
-	$.get('http://minecraft-api.com/v1/get/?server=' + ip, function(data) {
-		if (data.status) {
-			$("#o" + id).html(data.players.online + '/' + data.players.max);
-			if (data.players.online == 0)
+	$.get('http://37.187.243.201/mss/ping.php?ip=' + ip, function(data) {
+		if (data.max != null) {
+			$("#o" + id).html(data.online + '/' + data.max);
+			if (data.online == 0)
 				$('#ps' + id).html('<p>Nobody :(</p>');
-			$.get('http://minecraft-api.com/v1/players/?server=' + ip, function(pdata) {
-				if (pdata.players != null) {
-					for (var i = 0; i < pdata.players.length; i++) {
-						$('#ps' + id).append('<p><img src="http://cravatar.eu/avatar/' + pdata.players[i] + '/24.png" alt="' + pdata.players[i] + '"> ' + pdata.players[i] + '</p>');
-					}
-				} else if (pdata.error != null) {
-					$('#ps' + id).html('<p>Failed to load players</p>');
-				}
-			});
+			for (var i = 0; i < data.sample.length; i++) {
+				$('#ps' + id).append('<p><img src="http://cravatar.eu/avatar/' + data.sample[i].name + '/24.png" alt="' + data.sample[i].name + '"> ' + data.sample[i].name + '</p>');
+			}
 		} else {
-			$('#o' + id).html('OFFLINE');
-			$('#ps' + id).html('<p>Server offline :(</p>');
+			if (data.error != null) {
+				$('#o' + id).html('Error');
+				$('#ps' + id).html('<p><b>Error:</b></p><p>' + data.error + '</p><br><p>Maybe this server does not support querying?</p>');
+			} else {
+				$('#o' + id).html('OFFLINE');
+				$('#ps' + id).html('<p>Server offline :(</p>');
+			}
 		}
 	});
 }

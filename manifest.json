@@ -3,7 +3,7 @@
 
   "name": "Minecraft Server Status",
   "description": "This extension lets you check your server status easily.",
-  "version": "1.2",
+  "version": "1.2.1",
   
   "author": "Aron van Harten",
   
@@ -16,7 +16,7 @@
     "scripts": ["js/jquery-1.11.0.min.js", "js/background.js"]
   },
   "permissions": [
-    "http://minecraft-api.com/"
+    "http://http://37.187.243.201/"
   ],
   "browser_action": {
     "default_icon": "images/up.png",

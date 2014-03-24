@@ -11,10 +11,10 @@ function loadExtension () {
 }
 
 function checkState () {
-	$.get('http://minecraft-api.com/v1/get/?server=' + ip, function(data) {
-		if (data.status) {
+	$.get('http://37.187.243.201/mss/ping.php?ip=' + ip, function(data) {
+		if (data.max != null) {
 			chrome.browserAction.setIcon({path: 'images/up.png'});
-			chrome.browserAction.setBadgeText({text: '' + data.players.online});
+			chrome.browserAction.setBadgeText({text: '' + data.online});
 		} else {
 			chrome.browserAction.setIcon({path: 'images/down.png'});
 			chrome.browserAction.setBadgeText({text: 'OFF' });
