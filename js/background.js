@@ -11,7 +11,7 @@ function loadExtension () {
 }
 
 function checkState () {
-	$.get('http://37.187.243.201/mss/ping.php?ip=' + ip, function(data) {
+	$.get('https://aron.li/mss/ping.php?ip=' + ip, function(data) {
 		if (data.max != null) {
 			chrome.browserAction.setIcon({path: 'images/up.png'});
 			chrome.browserAction.setBadgeText({text: '' + data.online});

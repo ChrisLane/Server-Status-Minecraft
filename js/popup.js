@@ -34,22 +34,17 @@ function createPage () {
 }
 
 function retrieveInfo (id, ip) {
-	$.get('http://37.187.243.201/mss/ping.php?ip=' + ip, function(data) {
+	$.get('https://aron.li/mss/ping.php?ip=' + ip, function(data) {
 		if (data.max != null) {
 			$("#o" + id).html(data.online + '/' + data.max);
 			if (data.online == 0)
 				$('#ps' + id).html('<p>Nobody :(</p>');
-			for (var i = 0; i < data.sample.length; i++) {
-				$('#ps' + id).append('<p><img src="http://cravatar.eu/avatar/' + data.sample[i].name + '/24.png" alt="' + data.sample[i].name + '"> ' + data.sample[i].name + '</p>');
-			}
+			if (data.sample != null)
+				for (var i = 0; i < data.sample.length; i++)
+					$('#ps' + id).append('<p><img src="http://cravatar.eu/avatar/' + data.sample[i].name + '/24.png" alt="' + data.sample[i].name + '"> ' + data.sample[i].name + '</p>');
 		} else {
-			if (data.error != null) {
-				$('#o' + id).html('Error');
-				$('#ps' + id).html('<p><b>Error:</b></p><p>' + data.error + '</p><br><p>Maybe this server does not support querying?</p>');
-			} else {
-				$('#o' + id).html('OFFLINE');
-				$('#ps' + id).html('<p>Server offline :(</p>');
-			}
+			$('#o' + id).html('OFFLINE');
+			$('#ps' + id).html('<p>Server offline</p>');
 		}
 	});
 }
