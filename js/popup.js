@@ -34,7 +34,7 @@ function createPage () {
 }
 
 function retrieveInfo (id, ip) {
-	$.get('https://aron.li/mss/ping.php?ip=' + ip, function(data) {
+	$.get('http://198.50.146.38/ping.php?ip=' + ip, function(data) {
 		if (data.max != null) {
 			$("#o" + id).html(data.online + '/' + data.max);
 			if (data.online == 0)
