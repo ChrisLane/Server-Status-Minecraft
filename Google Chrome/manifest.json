@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "Minecraft Server Status",
+  "name": "Server Status Minecraft",
   "description": "This extension lets you check your server status easily.",
-  "version": "1.2.2",
+  "version": "1.4",
   
   "author": "Aron van Harten",
   
