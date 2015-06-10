@@ -18,6 +18,8 @@ function loadExtension () {
         chrome.browserAction.setIcon({path: 'images/down.png'});
         chrome.browserAction.setBadgeText({text: 'OFF' });
     }
+    
+    timer = setTimeout(loadExtension, 1000*300);
 }
 
 function checkState () {
@@ -30,14 +32,12 @@ function checkState () {
             chrome.browserAction.setBadgeText({text: 'OFF' });
         }
     });
-    
-    timer = setTimeout(checkState, 1000*300);
 }
 
 chrome.extension.onMessage.addListener(function (request, sender, sendResponse) {
     switch (true) {
         case request.restart:
-            timer = null;
+            clearTimeout(timer);
             loadExtension();
             break;
     }
