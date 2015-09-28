@@ -57,7 +57,7 @@ function retrieveInfo (id, ip) {
             }
             if (data.sample !== null) {
                 for (var i = 0; i < data.sample.length; i++) {
-                    $('#ps' + id).append('<p><img src="http://cravatar.eu/avatar/' + data.sample[i].name + '/24.png" alt="' + data.sample[i].name + '"> ' + data.sample[i].name + '</p>');
+                    $('#ps' + id).append('<p><img src="http://cravatar.eu/helmavatar/' + data.sample[i].name + '/24.png" alt="' + data.sample[i].name + '"> ' + data.sample[i].name + '</p>');
                 }
             }
         } else {
