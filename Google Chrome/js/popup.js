@@ -52,7 +52,7 @@ function createPage () {
 }
 
 function retrieveInfo (id, ip) {
-    $.get('http://198.50.146.38/ping.php?ip=' + ip, function(data) {
+    $.get('http://mss.aron.li/ping.php?ip=' + ip, function(data) {
         if (data.max !== null) {
             $("#o" + id).html(data.online + '/' + data.max);
             if (data.online === 0) {
