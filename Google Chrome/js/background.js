@@ -7,12 +7,12 @@ var HostnameRegex = new RegExp("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0
 function loadExtension () {
     ip = localStorage['ip0'];
     if (!ip) {
-        ip = 'INSERT_YOUR_SERVER_IP';
+        ip = 'SERVER_IP';
     }
     
     var split = ip.split(":");
     
-    if ((IPRegex.test(split[0]) || HostnameRegex.test(split[0])) && split[0].indexOf("INSERT_YOUR_SERVER_IP") === -1 && split[0].indexOf("localhost") === -1 && split[0].indexOf("127.0.0.1") === -1 && ((!isNaN(split[1]) && split[1] >= 0 && split[1] <= 65535) || split.length === 1)) {
+    if ((IPRegex.test(split[0]) || HostnameRegex.test(split[0])) && split[0].indexOf("SERVER_IP") === -1 && split[0].indexOf("localhost") === -1 && split[0].indexOf("127.0.0.1") === -1 && ((!isNaN(split[1]) && split[1] >= 0 && split[1] <= 65535) || split.length === 1)) {
         checkState();
     } else {
         chrome.browserAction.setIcon({path: 'images/down.png'});

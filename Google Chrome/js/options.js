@@ -27,7 +27,7 @@ function loadSettings () {
         
         ip[i] = localStorage['ip' + i];
         if (!ip[i]) {
-            ip[i] = 'localhost:25565';
+            ip[i] = 'SERVER_IP';
         }
     }
 }
