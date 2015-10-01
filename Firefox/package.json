@@ -1,0 +1,9 @@
+{
+  "name": "server_status_minecraft",
+  "title": "Server Status Minecraft",
+  "id": "jid1-ZAYnm26zMpVFSA@jetpack",
+  "description": "This extension lets you check the players currently on your Minecraft server and keep track of them in the toolbar icon.",
+  "author": "Aron van Harten",
+  "license": "BSD 2.0",
+  "version": "1.0.4"
+}
