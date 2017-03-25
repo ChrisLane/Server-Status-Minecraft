@@ -52,7 +52,7 @@ function createPage () {
 }
 
 function retrieveInfo (id, ip) {
-    $.get('http://mss.aron.li/ping.php?ip=' + ip, function(data) {
+    $.get('https://www.mineyc.com/tools/ping.php?ip=' + ip, function(data) {
         if (data.max !== null) {
             $("#o" + id).html(data.online + '/' + data.max);
             if (data.online === 0) {
@@ -60,7 +60,7 @@ function retrieveInfo (id, ip) {
             }
             if (data.sample !== null) {
                 for (var i = 0; i < data.sample.length; i++) {
-                    $('#ps' + id).append('<p><img src="http://cravatar.eu/helmavatar/' + data.sample[i].name + '/24.png" alt="' + data.sample[i].name + '"> ' + data.sample[i].name + '</p>');
+                    $('#ps' + id).append('<p><img src="https://cravatar.eu/helmavatar/' + data.sample[i].name + '/24.png" alt="' + data.sample[i].name + '"> ' + data.sample[i].name + '</p>');
                 }
             }
         } else {
